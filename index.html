@@ -198,6 +198,7 @@
 											<span class="tag">Google ML Kit</span>
 										</div>
 										<div class="project-links">
+											<a href="#vision-assist-details" class="details-link">View Details</a>
 											<a href="https://github.com/KateMHagen/vision_assist" target="_blank">GitHub</a>
 										</div>
 									</div>
@@ -252,33 +253,30 @@
 							<h3>Vision Assist</h3>
 							<div class="row">
 								<div class="col-8 col-12-medium">
-									<p>
-										Vision Assist is an innovative application designed to help visually impaired individuals navigate their surroundings with greater confidence and independence. The system uses a combination of computer vision techniques and machine learning models to detect objects, recognize faces, read text, and provide audio feedback to users.
-									</p>
-									<h4>Key Features</h4>
-									<ul>
-										<li>Real-time object detection and identification</li>
-										<li>Text recognition and reading (OCR)</li>
-										<li>Facial recognition of saved contacts</li>
-										<li>Distance estimation for obstacle avoidance</li>
-										<li>Voice-controlled interface</li>
-										<li>Audio feedback through spatial sound</li>
-									</ul>
-									<h4>Technologies Used</h4>
-									<p>
-										This project leverages several cutting-edge technologies:
-									</p>
-									<ul>
-										<li>Python for the core application logic</li>
-										<li>TensorFlow and YOLO for object detection</li>
-										<li>PyTorch for facial recognition models</li>
-										<li>Tesseract OCR for text recognition</li>
-										<li>Google Text-to-Speech API for voice feedback</li>
-										<li>OpenCV for image processing</li>
-									</ul>
+								<p>
+									Vision Assist is a mobile application developed to support visually impaired individuals in navigating their environments safely and independently. The app combines real-time object detection, GPS navigation, text recognition, and voice feedback to enhance accessibility and situational awareness.
+								</p>
+								<h4>Key Features</h4>
+								<ul>
+									<li>Real-time object recognition using an integrated ML model</li>
+									<li>GPS navigation with route guidance via voice prompts</li>
+									<li>Text scanning and reading functionality (OCR)</li>
+									<li>Emergency alarm system with SMS alert capability</li>
+									<li>Accessible interface with voice feedback and large touch targets</li>
+									<li>Modular tab-based navigation: Object Recognition, Scan Text, GPS, Emergency</li>
+								</ul>
+								<h4>Technologies Used</h4>
+								<ul>
+									<li><strong>Flutter</strong> for cross-platform mobile development</li>
+									<li><strong>Firebase Firestore</strong> for real-time NoSQL database and user management</li>
+									<li><strong>TensorFlow Lite</strong> for on-device ML object detection</li>
+									<li><strong>Apple Maps API</strong> for iOS GPS navigation and location services</li>
+									<li><strong>Text-to-Speech</strong> libraries for audio feedback</li>
+									<li><strong>Google ML Kit</strong> for OCR and text recognition</li>
+								</ul>
 								</div>
 								<div class="col-4 col-12-medium">
-									<img src="images/vision-assist-detail.jpg" alt="Vision Assist Demo" class="image fit">
+								<img src="images/vision-assist-detail.jpg" alt="Vision Assist Demo" class="image fit">
 								</div>
 							</div>
 							<div class="project-links" style="margin-top: 20px;">
@@ -287,36 +285,32 @@
 						</div>
 
 						<div id="food-ordering-details" class="project-details" style="display: none;">
-							<h3>Django Food Ordering System</h3>
+							<h3>Django + React Food Ordering App</h3>
 							<div class="row">
 								<div class="col-8 col-12-medium">
 									<p>
-										A comprehensive web-based food ordering platform built with Django framework. This system allows restaurants to showcase their menu items and enables customers to browse, order, and pay online with a seamless user experience.
+										A full-stack web application that enables users to browse menus, place orders, and track delivery statuses. Built for a local pupusa restaurant, emphasizing usability and responsive design.
 									</p>
 									<h4>Key Features</h4>
 									<ul>
-										<li>User authentication and profile management</li>
-										<li>Restaurant dashboard for menu management</li>
-										<li>Advanced search and filtering options</li>
-										<li>Shopping cart functionality</li>
-										<li>Order tracking system</li>
-										<li>Payment gateway integration</li>
-										<li>Review and rating system</li>
-										<li>Responsive design for mobile and desktop</li>
+										<li>User registration, login, and session handling</li>
+										<li>Dynamic menu creation and updates via admin panel</li>
+										<li>Shopping cart, order placement, and tracking</li>
+										<li>Frontend built with React and RESTful API integration</li>
+										<li>Basic Stripe integration for payment simulation</li>
 									</ul>
 									<h4>Technologies Used</h4>
-									<p>
-										The project utilizes a modern tech stack:
-									</p>
 									<ul>
-										<li>Django framework for backend development</li>
-										<li>PostgreSQL for database management</li>
-										<li>JavaScript and jQuery for frontend interactions</li>
-										<li>Bootstrap for responsive design</li>
-										<li>Stripe API for payment processing</li>
-										<li>Redis for caching</li>
-										<li>Celery for asynchronous tasks</li>
+										<li>Django & Django REST Framework</li>
+										<li>React for frontend UI</li>
+										<li>PostgreSQL for relational data</li>
+										<li>Axios for API calls</li>
+										<li>Bootstrap for styling</li>
 									</ul>
+									<h4>Role</h4>
+									<p>
+										Designed and implemented the backend API with Django and built the frontend components using React. Focused on responsive layout and data integrity.
+									</p>
 								</div>
 								<div class="col-4 col-12-medium">
 									<img src="images/food-ordering-detail.jpg" alt="Food Ordering System Screenshot" class="image fit">
@@ -328,40 +322,31 @@
 						</div>
 
 						<div id="nba-analysis-details" class="project-details" style="display: none;">
-							<h3>NBA Position Performance Study</h3>
+							<h3>NBA Position Performance Analysis</h3>
 							<div class="row">
 								<div class="col-8 col-12-medium">
 									<p>
-										A data science project analyzing the evolution of NBA positions and their statistical performance over the past 20 years. This study explores how the role of traditional positions has changed and identifies trends in player performance metrics.
+										An independent research project analyzing how NBA player roles and statistical contributions have evolved over the past 20 years. Explores the impact of the three-point revolution and positionless basketball.
 									</p>
-									<h4>Key Research Questions</h4>
+									<h4>Key Insights</h4>
 									<ul>
-										<li>How have traditional NBA positions evolved over time?</li>
-										<li>What statistical categories show the most significant changes per position?</li>
-										<li>How has the three-point revolution affected different positions?</li>
-										<li>Is position-less basketball reflected in the data?</li>
-										<li>Which positions provide the best value based on salary vs. performance?</li>
+										<li>Shift in scoring trends by position since 2000</li>
+										<li>Increased usage and efficiency in 3PT shooting</li>
+										<li>Statistical convergence of guard and forward roles</li>
+										<li>Value comparison via salary vs. performance metrics</li>
 									</ul>
-									<h4>Methodology</h4>
+									<h4>Methodology & Tools</h4>
+									<ul>
+										<li>Data scraping from NBA APIs & Basketball Reference</li>
+										<li>Preprocessing using Pandas and NumPy</li>
+										<li>Data visualization with Seaborn, Matplotlib, Plotly</li>
+										<li>Machine learning (K-Means, Linear Regression)</li>
+										<li>Jupyter Notebooks for iterative development</li>
+									</ul>
+									<h4>Role</h4>
 									<p>
-										The project involved:
+										Handled full pipeline from data acquisition to analysis and modeling. Presented findings with interactive dashboards and visual reports.
 									</p>
-									<ul>
-										<li>Data collection from NBA API and Basketball-Reference</li>
-										<li>Data cleaning and preprocessing</li>
-										<li>Statistical analysis of performance metrics</li>
-										<li>Time series analysis of position trends</li>
-										<li>Visualization of key findings</li>
-										<li>Machine learning models to predict future trends</li>
-									</ul>
-									<h4>Technologies Used</h4>
-									<ul>
-										<li>Python for data processing and analysis</li>
-										<li>Pandas and NumPy for data manipulation</li>
-										<li>Matplotlib, Seaborn, and Plotly for visualization</li>
-										<li>Scikit-learn for machine learning models</li>
-										<li>Jupyter Notebooks for documentation</li>
-									</ul>
 								</div>
 								<div class="col-4 col-12-medium">
 									<img src="images/nba-analysis-detail.jpg" alt="NBA Data Visualization" class="image fit">
@@ -389,37 +374,52 @@
 					</article>
 				
 					<!-- Get in Touch -->
+					<!-- Get in Touch -->
 					<article id="getintouch" class="panel">
 						<header>
-							<h2>Get in Touch</h2>
+						<h2>Get in Touch</h2>
 						</header>
 						<p>
-							I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out through any of these platforms!
+						Whether you’re interested in collaborating, have a question, or just want to say hello — I’d love to hear from you.
 						</p>
-						<section>
-							<div class="row">
-								<div class="col-4 col-6-medium col-12-small">
-									<a href="mailto:manny.negrete@example.com" class="image fit contact-link">
-										<img src="images/email-icon.jpg" alt="Email">
-										<p class="text-center">Email</p>
-									</a>
-								</div>
-								<div class="col-4 col-6-medium col-12-small">
-									<a href="https://linkedin.com/in/mannynegrete" target="_blank" class="image fit contact-link">
-										<img src="images/linkedin-icon.jpg" alt="LinkedIn">
-										<p class="text-center">LinkedIn</p>
-									</a>
-								</div>
-								<div class="col-4 col-6-medium col-12-small">
-									<a href="https://github.com/mannynegrete" target="_blank" class="image fit contact-link">
-										<img src="images/github-icon.jpg" alt="GitHub">
-										<p class="text-center">GitHub</p>
-									</a>
-								</div>
+					
+						<!-- Contact Form -->
+						<form method="post" action="mailto:mgnegrete24@gmail.com" enctype="text/plain" class="contact-form">
+						<div class="row">
+							<div class="col-6 col-12-medium">
+							<input type="text" name="name" placeholder="Your Name" required />
 							</div>
+							<div class="col-6 col-12-medium">
+							<input type="email" name="email" placeholder="Your Email" required />
+							</div>
+							<div class="col-12">
+							<textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+							</div>
+							<div class="col-12">
+							<ul class="actions">
+								<li><input type="submit" value="Send Message" class="primary" /></li>
+							</ul>
+							</div>
+						</div>
+						</form>
+					
+						<!-- Social Links -->
+						<section class="social-icons" style="margin-top: 2rem;">
+						<ul class="icons" style="display: flex; gap: 1.5rem; justify-content: center; align-items: center; padding: 0;">
+							<li>
+							<a href="https://github.com/mgnegrete" target="_blank" style="text-decoration: none;">
+								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="80" height="80" />
+							</a>
+							</li>
+							<li>
+							<a href="https://linkedin.com/in/mannynegrete" target="_blank" style="text-decoration: none;">
+								<img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="80" height="80" />
+							</a>
+							</li>
+						</ul>
 						</section>
 					</article>
-				</div>
+  
 
 				<!-- Footer -->
 				<div id="footer">
