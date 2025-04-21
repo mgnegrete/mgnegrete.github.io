@@ -1,174 +1,513 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Manny Negrete </title>
+		<title>Manny Negrete</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
-			body{color:#d1d1d1;background:#1d1d20}.loading{color:#d1d1d1;padding:20px;font-family:Arial, Helvetica,sans-serif;position:absolute;bottom:0}.main{opacity:1;transition:opacity .2s ease-in-out}.main.not-loaded{opacity:0}[data-name=corner-bottom-right],[data-name=corner-top-left]{opacity:1;width:100px;height:100px;transition:all ease-in-out;position:absolute}[data-name=corner-top-left]{top:0;left:0}[data-name=corner-bottom-right]{opacity:0;bottom:0;right:0}.not-loaded [data-name=corner-top-left],.not-loaded [data-name=corner-bottom-right]
-				{opacity:0!important;width:0!important;height:0!important}@media screen and (min-width:500px){[data-name=corner-bottom-right],[data-name=corner-top-left]{width:300px;height:300px;opacity:1}}.gradient1{stop-color:var(--grad-1);transition:all .3s ease-in-out}.gradient2{stop-color:var(--grad-2);transition:all .3s ease-in-out}.hover .gradient1{stop-color:var(--grad-2)}.hover .gradient2{stop-color:var(--grad-1)}
+			body{color:#d1d1d1;background:#1d1d20}.loading{color:#d1d1d1;padding:20px;font-family:Arial, Helvetica,sans-serif;position:absolute;bottom:0}.main{opacity:1;transition:opacity .2s ease-in-out}.main.not-loaded{opacity:0}
+
+			/* Updated corner styling for fixed position */
+			[data-name=corner-top-left]{
+				opacity:1;
+				width:100px;
+				height:100px;
+				transition:all ease-in-out;
+				position:absolute;
+				top:0;
+				left:0;
+				z-index:10;
+			}
+			
+			[data-name=corner-bottom-right]{
+				opacity:1;
+				width:100px;
+				height:100px;
+				transition:all ease-in-out;
+				position:fixed;  /* Changed to fixed */
+				bottom:0;
+				right:0;
+				z-index:10;
+			}
+			
+			.not-loaded [data-name=corner-top-left],
+			.not-loaded [data-name=corner-bottom-right] {
+				opacity:0!important;
+				width:0!important;
+				height:0!important;
+			}
+			
+			@media screen and (min-width:500px){
+				[data-name=corner-bottom-right],[data-name=corner-top-left]{
+					width:300px;
+					height:300px;
+					opacity:1;
+				}
+			}
+			
+			.gradient1{stop-color:var(--grad-1);transition:all .3s ease-in-out}
+			.gradient2{stop-color:var(--grad-2);transition:all .3s ease-in-out}
+			.hover .gradient1{stop-color:var(--grad-2)}
+			.hover .gradient2{stop-color:var(--grad-1)}
+
+			/* Project cards styling */
+			.project-card {
+				padding: 15px;
+				margin-bottom: 20px;
+				background: rgba(30, 30, 35, 0.7);
+				border-radius: 8px;
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
+			.project-card:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+			}
+			.project-title {
+				font-size: 1.4em;
+				margin-top: 10px;
+				color: var(--grad-2);
+			}
+			.project-desc {
+				margin: 10px 0;
+			}
+			.project-tags {
+				display: flex;
+				flex-wrap: wrap;
+				margin-top: 10px;
+			}
+			.tag {
+				background: rgba(56, 104, 154, 0.3);
+				color: #d1d1d1;
+				padding: 3px 8px;
+				border-radius: 4px;
+				margin-right: 5px;
+				margin-bottom: 5px;
+				font-size: 0.8em;
+			}
+			.project-links {
+				margin-top: 15px;
+			}
+			.project-links a {
+				display: inline-block;
+				margin-right: 10px;
+				padding: 5px 12px;
+				background: linear-gradient(135deg, var(--grad-1), var(--grad-2));
+				border-radius: 4px;
+				color: #fff;
+				text-decoration: none;
+				transition: all 0.3s ease;
+			}
+			.project-links a:hover {
+				opacity: 0.9;
+				transform: translateY(-2px);
+			}
+			
+			/* Footer styling fixes */
+			#footer {
+				position: relative;
+				width: 100%;
+				padding-bottom: 300px; /* Extra space for corner SVG */
+			}
 		</style>
 		<style id="color-vars"> :root {--grad-1:rgb(56,104,154); --grad-2:rgb(167,186,86);}
 		</style>
 	</head>
 	<body class="is-preload">
 			
-			</h1>
 		<!-- Wrapper-->
-			<div id="wrapper">
-				<div id="main-container-inner" class="main-container-inner">
-					<div>
-						<svg width="300" height="300" data-name="corner-top-left">
-								<defs>
-									<linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-										<stop offset="0" class="gradient1"></stop>
-										<stop offset=".5" class="gradient2"></stop>
-										<stop offset="1" class="gradient1"></stop>
-									</linearGradient>
-								</defs>
-							<path fill="url('#grad1')" d="M8 0h292l-20 20H25a5 5 0 0 0-5 5v255L0 300V8a8 8 0 0 2 8-8Z"></path>
-						</svg>
-					</div>	
-					
-
+		<div id="wrapper">
+			<div id="main-container-inner" class="main-container-inner">
+				<div>
+					<svg width="300" height="300" data-name="corner-top-left">
+						<defs>
+							<linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+								<stop offset="0" class="gradient1"></stop>
+								<stop offset=".5" class="gradient2"></stop>
+								<stop offset="1" class="gradient1"></stop>
+							</linearGradient>
+						</defs>
+						<path fill="url('#grad1')" d="M8 0h292l-20 20H25a5 5 0 0 0-5 5v255L0 300V8a8 8 0 0 2 8-8Z"></path>
+					</svg>
+				</div>	
+				
 				<h3 class="ml5">
 					<span class="text-wrapper">
-					<span class="line line1"></span>
-					<span class="letters letter" justify-content: center;>Welcome</span>
-					<span class="line line2"></span>
-					<defs>
-						<linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-							<stop offset="0" class="gradient1"></stop>
-							<stop offset=".5" class="gradient2"></stop>
-							<stop offset="1" class="gradient1"></stop>
-						</linearGradient>
-					</defs>
-				</span>
+						<span class="line line1"></span>
+						<span class="letters letter" justify-content: center;>Welcome</span>
+						<span class="line line2"></span>
+						<defs>
+							<linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+								<stop offset="0" class="gradient1"></stop>
+								<stop offset=".5" class="gradient2"></stop>
+								<stop offset="1" class="gradient1"></stop>
+							</linearGradient>
+						</defs>
+					</span>
+				</h3>
 				<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 				<!-- Nav -->
-					<nav id="nav">
-						<a href="#" class="icon solid fa-home"><span>Home</span> <style></style></a>
-						<a href="#projects" class="icon solid fa-folder"><span>Projects</span></a>
-						<a href="#contact" class="icon solid fa-envelope"><span>About Me</span></a>
-						<a href="#getintouch" class="icon brands fa-linkedin"><span>Get In Touch</span></a>
-					</nav>
+				<nav id="nav">
+					<a href="#" class="icon solid fa-home"><span>Home</span></a>
+					<a href="#projects" class="icon solid fa-folder"><span>Projects</span></a>
+					<a href="#contact" class="icon solid fa-envelope"><span>About Me</span></a>
+					<a href="#getintouch" class="icon brands fa-linkedin"><span>Get In Touch</span></a>
+				</nav>
 
 				<!-- Main -->
-					<div id="main">
+				<div id="main">
 
-						<!-- Home -->
-							<article id="home" class="panel intro">
-								<header>
-									<defs>
-										 <style> .cls-1{fill:#9a3838} .cls-2{fill:#182d43}</style>
-									</defs>
-									<h1>Manny Negrete</h1>
-									<p>Computer science student and drone enthusiast</p>
-									<p>California State University, Northridge</p>
-								</header>
-								<!--<a href="#projects" class="jumplink pic">
-									<span class="arrow icon solid fa-chevron-right"><span>See my work</span></span>								
-								</a> --><img class="profile_image" src="images/me.jpg" alt="" /> 	
-							</article>
+					<!-- Home -->
+					<article id="home" class="panel intro">
+						<header>
+							<defs>
+								<style> .cls-1{fill:#9a3838} .cls-2{fill:#182d43}</style>
+							</defs>
+							<h1>Manny Negrete</h1>
+							<p>Computer science student and drone enthusiast</p>
+							<p>California State University, Northridge</p>
+						</header>
+						<img class="profile_image" src="images/me.jpg" alt="" /> 	
+					</article>
 
-						<!-- Projects -->
-							<article id="projects" class="panel">
-								<header>
-									<h2>Projects</h2>
-								</header>
-								<p>
-									Here are my latest project that I have worked on.
-								</p>
-								<section>
-									<div class="row">
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic01.jpg" alt="Google Calendar API"></a>
+					<!-- Projects -->
+					<article id="projects" class="panel">
+						<header>
+							<h2>Projects</h2>
+						</header>
+						<p>
+							Here are my latest projects that I have worked on.
+						</p>
+						<section>
+							<div class="row">
+								<!-- Project 1: Vision Assist -->
+								<div class="col-4 col-12-medium">
+									<div class="project-card">
+										<a href="#" class="image fit"><img src="images/vision-assist.jpg" alt="Vision Assist Project"></a>
+										<h3 class="project-title">Vision Assist</h3>
+										<p class="project-desc">
+											An assistive technology solution that uses computer vision to help visually impaired individuals navigate their environment and identify objects in real-time.
+										</p>
+                                        <div class="project-tags">
+											<span class="tag">Dart</span>
+											<span class="tag">Flutter</span>
+											<span class="tag">Flutter TTS</span>
+											<span class="tag">Firebase</span>
+											<span class="tag">Google Maps API</span>
+											<span class="tag">Google ML Kit</span>
 										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic02.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic03.jpg" alt=""></a>
+										<div class="project-links">
+											<a href="https://github.com/KateMHagen/vision_assist" target="_blank">GitHub</a>
 										</div>
 									</div>
-								</section>
-							</article>
-
-						<!-- About Me -->
-							<article id="contact" class="panel">
-								<header>
-									<h2>About Me</h2>
-								</header>
-									<div>
-										<p>This section is about me.</p><br>
-										<div>
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-											tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-											quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-											consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-											cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-											proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	
+								</div>
+								
+								<!-- Project 2: Django Food Ordering System -->
+								<div class="col-4 col-12-medium">
+									<div class="project-card">
+										<a href="#" class="image fit"><img src="images/food-ordering.jpg" alt="Food Ordering System"></a>
+										<h3 class="project-title">Django Food Ordering System</h3>
+										<p class="project-desc">
+											A full-stack web application for online food ordering with user authentication, menu management, order tracking, and payment processing.
+										</p>
+										<div class="project-tags">
+											<span class="tag">Django</span>
+											<span class="tag">Python</span>
+											<span class="tag">JavaScript</span>
+											<span class="tag">PostgreSQL</span>
+										</div>
+										<div class="project-links">
+											<a href="#food-ordering-details" class="details-link">View Details</a>
+											<a href="https://github.com/yourusername/food-ordering" target="_blank">GitHub</a>
 										</div>
 									</div>
-								</form>
-							</article>
-						
-						<!-- Get in Touch -->
-							<article id="getintouch" class="panel">
-								<header>
-									<h2>Get in Touch</h2>
-								</header>
-								<p>
-									Here are spaces where you can get in touch with me. Looking forward to speaking with you!
-								</p>
-								<section>
-									<div class="row">
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic01.jpg" alt="Google Calendar API"></a>
+								</div>
+								
+								<!-- Project 3: NBA Position Performance Study -->
+								<div class="col-4 col-12-medium">
+									<div class="project-card">
+										<a href="#" class="image fit"><img src="images/nba-analysis.jpg" alt="NBA Performance Analysis"></a>
+										<h3 class="project-title">NBA Position Performance Study</h3>
+										<p class="project-desc">
+											Data analysis project examining the evolution of NBA positions and their statistical performance over time, with interactive visualizations.
+										</p>
+										<div class="project-tags">
+											<span class="tag">Data Science</span>
+											<span class="tag">Python</span>
+											<span class="tag">Pandas</span>
+											<span class="tag">Matplotlib</span>
 										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic02.jpg" alt=""></a>
+										<div class="project-links">
+											<a href="#nba-analysis-details" class="details-link">View Details</a>
+											<a href="https://github.com/yourusername/nba-position-analysis" target="_blank">GitHub</a>
 										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic03.jpg" alt=""></a>
 									</div>
-								</section>
-							</article>
+								</div>
+							</div>
+						</section>
 
-					</div>
+						<!-- Project Detail Pages -->
+						<div id="vision-assist-details" class="project-details" style="display: none;">
+							<h3>Vision Assist</h3>
+							<div class="row">
+								<div class="col-8 col-12-medium">
+									<p>
+										Vision Assist is an innovative application designed to help visually impaired individuals navigate their surroundings with greater confidence and independence. The system uses a combination of computer vision techniques and machine learning models to detect objects, recognize faces, read text, and provide audio feedback to users.
+									</p>
+									<h4>Key Features</h4>
+									<ul>
+										<li>Real-time object detection and identification</li>
+										<li>Text recognition and reading (OCR)</li>
+										<li>Facial recognition of saved contacts</li>
+										<li>Distance estimation for obstacle avoidance</li>
+										<li>Voice-controlled interface</li>
+										<li>Audio feedback through spatial sound</li>
+									</ul>
+									<h4>Technologies Used</h4>
+									<p>
+										This project leverages several cutting-edge technologies:
+									</p>
+									<ul>
+										<li>Python for the core application logic</li>
+										<li>TensorFlow and YOLO for object detection</li>
+										<li>PyTorch for facial recognition models</li>
+										<li>Tesseract OCR for text recognition</li>
+										<li>Google Text-to-Speech API for voice feedback</li>
+										<li>OpenCV for image processing</li>
+									</ul>
+								</div>
+								<div class="col-4 col-12-medium">
+									<img src="images/vision-assist-detail.jpg" alt="Vision Assist Demo" class="image fit">
+								</div>
+							</div>
+							<div class="project-links" style="margin-top: 20px;">
+								<a href="#projects" class="back-button">Back to Projects</a>
+							</div>
+						</div>
+
+						<div id="food-ordering-details" class="project-details" style="display: none;">
+							<h3>Django Food Ordering System</h3>
+							<div class="row">
+								<div class="col-8 col-12-medium">
+									<p>
+										A comprehensive web-based food ordering platform built with Django framework. This system allows restaurants to showcase their menu items and enables customers to browse, order, and pay online with a seamless user experience.
+									</p>
+									<h4>Key Features</h4>
+									<ul>
+										<li>User authentication and profile management</li>
+										<li>Restaurant dashboard for menu management</li>
+										<li>Advanced search and filtering options</li>
+										<li>Shopping cart functionality</li>
+										<li>Order tracking system</li>
+										<li>Payment gateway integration</li>
+										<li>Review and rating system</li>
+										<li>Responsive design for mobile and desktop</li>
+									</ul>
+									<h4>Technologies Used</h4>
+									<p>
+										The project utilizes a modern tech stack:
+									</p>
+									<ul>
+										<li>Django framework for backend development</li>
+										<li>PostgreSQL for database management</li>
+										<li>JavaScript and jQuery for frontend interactions</li>
+										<li>Bootstrap for responsive design</li>
+										<li>Stripe API for payment processing</li>
+										<li>Redis for caching</li>
+										<li>Celery for asynchronous tasks</li>
+									</ul>
+								</div>
+								<div class="col-4 col-12-medium">
+									<img src="images/food-ordering-detail.jpg" alt="Food Ordering System Screenshot" class="image fit">
+								</div>
+							</div>
+							<div class="project-links" style="margin-top: 20px;">
+								<a href="#projects" class="back-button">Back to Projects</a>
+							</div>
+						</div>
+
+						<div id="nba-analysis-details" class="project-details" style="display: none;">
+							<h3>NBA Position Performance Study</h3>
+							<div class="row">
+								<div class="col-8 col-12-medium">
+									<p>
+										A data science project analyzing the evolution of NBA positions and their statistical performance over the past 20 years. This study explores how the role of traditional positions has changed and identifies trends in player performance metrics.
+									</p>
+									<h4>Key Research Questions</h4>
+									<ul>
+										<li>How have traditional NBA positions evolved over time?</li>
+										<li>What statistical categories show the most significant changes per position?</li>
+										<li>How has the three-point revolution affected different positions?</li>
+										<li>Is position-less basketball reflected in the data?</li>
+										<li>Which positions provide the best value based on salary vs. performance?</li>
+									</ul>
+									<h4>Methodology</h4>
+									<p>
+										The project involved:
+									</p>
+									<ul>
+										<li>Data collection from NBA API and Basketball-Reference</li>
+										<li>Data cleaning and preprocessing</li>
+										<li>Statistical analysis of performance metrics</li>
+										<li>Time series analysis of position trends</li>
+										<li>Visualization of key findings</li>
+										<li>Machine learning models to predict future trends</li>
+									</ul>
+									<h4>Technologies Used</h4>
+									<ul>
+										<li>Python for data processing and analysis</li>
+										<li>Pandas and NumPy for data manipulation</li>
+										<li>Matplotlib, Seaborn, and Plotly for visualization</li>
+										<li>Scikit-learn for machine learning models</li>
+										<li>Jupyter Notebooks for documentation</li>
+									</ul>
+								</div>
+								<div class="col-4 col-12-medium">
+									<img src="images/nba-analysis-detail.jpg" alt="NBA Data Visualization" class="image fit">
+								</div>
+							</div>
+							<div class="project-links" style="margin-top: 20px;">
+								<a href="#projects" class="back-button">Back to Projects</a>
+							</div>
+						</div>
+					</article>
+
+					<!-- About Me -->
+					<article id="contact" class="panel">
+						<header>
+							<h2>About Me</h2>
+						</header>
+						<div>
+							<p>I am a computer science student at California State University, Northridge with a passion for innovative technology and problem solving. My academic journey has equipped me with a strong foundation in software development, data structures, algorithms, and machine learning.</p><br>
+							<div>
+								<p>Beyond my coursework, I'm an avid drone enthusiast and enjoy exploring the intersection of aerial photography, programming, and 3D mapping. I'm particularly interested in how computer vision and AI can transform various industries.</p>
+								<p>My goal is to build technology solutions that make a positive impact on people's lives, whether through accessibility tools, data-driven insights, or efficient web applications. I'm constantly learning new technologies and frameworks to expand my skill set.</p>
+								<p>When I'm not coding or flying drones, you can find me hiking in California's beautiful landscapes or experimenting with new tech gadgets.</p>	
+							</div>
+						</div>
+					</article>
+				
+					<!-- Get in Touch -->
+					<article id="getintouch" class="panel">
+						<header>
+							<h2>Get in Touch</h2>
+						</header>
+						<p>
+							I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out through any of these platforms!
+						</p>
+						<section>
+							<div class="row">
+								<div class="col-4 col-6-medium col-12-small">
+									<a href="mailto:manny.negrete@example.com" class="image fit contact-link">
+										<img src="images/email-icon.jpg" alt="Email">
+										<p class="text-center">Email</p>
+									</a>
+								</div>
+								<div class="col-4 col-6-medium col-12-small">
+									<a href="https://linkedin.com/in/mannynegrete" target="_blank" class="image fit contact-link">
+										<img src="images/linkedin-icon.jpg" alt="LinkedIn">
+										<p class="text-center">LinkedIn</p>
+									</a>
+								</div>
+								<div class="col-4 col-6-medium col-12-small">
+									<a href="https://github.com/mannynegrete" target="_blank" class="image fit contact-link">
+										<img src="images/github-icon.jpg" alt="GitHub">
+										<p class="text-center">GitHub</p>
+									</a>
+								</div>
+							</div>
+						</section>
+					</article>
+				</div>
 
 				<!-- Footer -->
-					<div id="footer">
-						<ul class="copyright">
-							<li>&copy; Untitled.</li><li>Design: Manny Negrete</li>
-							<svg width="300" height="300" data-name="corner-bottom-right" transform="rotate(180)">
-								<svg transform="translate(100,100)">
-								<defs>
-									<linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-										<stop offset="0" class="gradient1"></stop>
-										<stop offset=".5" class="gradient2"></stop>
-										<stop offset="1" class="gradient1"></stop>
-									</linearGradient>
-								</defs>
-								</svg>
-								<path fill="url('#grad1')" d="M8 0h292l-20 20H25a5 5 0 0 0-5 5v255L0 300V8a8 8 0 0 2 8-8Z"></path>
-							</svg>
-						</ul>
-						<div>
-							
-						</div>
-					</div>
-
+				<div id="footer">
+					<ul class="copyright">
+						<li>&copy; 2025 Manny Negrete</li><li>Design: Manny Negrete</li>
+					</ul>
+				</div>
 			</div>
+		</div>
+		
+		<!-- Bottom right corner SVG with fixed positioning -->
+		<svg width="300" height="300" data-name="corner-bottom-right" transform="rotate(90)">
+			<defs>
+				<linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+					<stop offset="0" class="gradient1"></stop>
+					<stop offset=".5" class="gradient2"></stop>
+					<stop offset="1" class="gradient1"></stop>
+				</linearGradient>
+			</defs>
+			<path fill="url('#grad2')" d="M8 0h292l-20 20H25a5 5 0 0 0-5 5v255L0 300V8a8 8 0 0 2 8-8Z"></path>
+		</svg>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script>
+			// Animation for corner elements on load
+			window.addEventListener("DOMContentLoaded", () => {
+				const visited = sessionStorage.getItem("visited");
+			
+				if (!visited) {
+					const topLeft = document.querySelector('[data-name="corner-top-left"]');
+					const bottomRight = document.querySelector('[data-name="corner-bottom-right"]');
+			
+					if (topLeft && bottomRight) {
+						topLeft.classList.add("animate-gradient");
+						bottomRight.classList.add("animate-gradient");
+					}
+			
+					sessionStorage.setItem("visited", "true");
+				}
+			});
 
+			// Project details view handling
+			document.addEventListener('DOMContentLoaded', function() {
+				// Get all detail links
+				const detailLinks = document.querySelectorAll('.details-link');
+				const backButtons = document.querySelectorAll('.back-button');
+				const projectCards = document.querySelector('.row');
+				const projectDetails = document.querySelectorAll('.project-details');
+				
+				// Add click event to detail links
+				detailLinks.forEach(link => {
+					link.addEventListener('click', function(e) {
+						e.preventDefault();
+						
+						// Hide all project cards
+						projectCards.style.display = 'none';
+						
+						// Hide all project details
+						projectDetails.forEach(detail => {
+							detail.style.display = 'none';
+						});
+						
+						// Show the selected project detail
+						const targetId = this.getAttribute('href').substring(1);
+						document.getElementById(targetId).style.display = 'block';
+					});
+				});
+				
+				// Add click event to back buttons
+				backButtons.forEach(button => {
+					button.addEventListener('click', function(e) {
+						e.preventDefault();
+						
+						// Hide all project details
+						projectDetails.forEach(detail => {
+							detail.style.display = 'none';
+						});
+						
+						// Show project cards
+						projectCards.style.display = 'flex';
+					});
+				});
+			});
+		</script>						
 	</body>
 </html>
