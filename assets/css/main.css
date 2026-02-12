@@ -2152,6 +2152,9 @@ input, select, textarea {
 
 				#main img.profile_image{
 					max-width: 50%;
+					width: 100px;
+  					height: 100px;
+  					object-fit: cover;
   					height: auto;
 				}
 
