@@ -2152,10 +2152,16 @@ input, select, textarea {
 
 				#main img.profile_image{
 					max-width: 50%;
-					width: 100px;
-  					height: 100px;
+					width: 400px;
+  					height: 400px;
   					object-fit: cover;
   					height: auto;
+				}
+				#main img.profile_image2{
+					float: left;
+					width: 360px;
+					margin: 0 20px 15px 0;
+					border-radius: 12px;
 				}
 
 
