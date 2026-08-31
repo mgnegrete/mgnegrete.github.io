@@ -108,7 +108,6 @@
 			#footer {
 				position: relative;
 				width: 100%;
-				padding-bottom: 300px; /* Extra space for corner SVG */
 			}
 		</style>
 		<style id="color-vars"> :root {--grad-1:rgb(56,104,154); --grad-2:rgb(167,186,86);}
@@ -144,15 +143,8 @@
 				<h3 class="ml5">
 					<span class="text-wrapper">
 						<span class="line line1"></span>
-						<span class="letters letter" justify-content: center;>Welcome</span>
+						<span class="letters letter">Welcome</span>
 						<span class="line line2"></span>
-						<defs>
-							<linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-								<stop offset="0" class="gradient1"></stop>
-								<stop offset=".5" class="gradient2"></stop>
-								<stop offset="1" class="gradient1"></stop>
-							</linearGradient>
-						</defs>
 					</span>
 				</h3>
 				<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
@@ -160,7 +152,7 @@
 				<nav id="nav">
 					<a href="#" class="icon solid fa-home"><span>Home</span></a>
 					<a href="#projects" class="icon solid fa-folder"><span>Projects</span></a>
-					<a href="#contact" class="icon solid fa-envelope"><span>About Me</span></a>
+					<a href="#contact" class="icon solid fa-user"><span>About Me</span></a>
 					<a href="#getintouch" class="icon brands fa-linkedin"><span>Get In Touch</span></a>
 				</nav>
 
@@ -170,9 +162,6 @@
 					<!-- Home -->
 					<article id="home" class="panel intro">
 						<header>
-							<defs>
-								<style> .cls-1{fill:#9a3838} .cls-2{fill:#182d43}</style>
-							</defs>
 							<h1>Manny Negrete</h1>
 							<p>Computer science student and drone enthusiast</p>
 							<p>California State University, Northridge</p>
@@ -193,7 +182,7 @@
 								<!-- Project: NetBox Automation & Infrastructure Management -->
 								<div class="col-4 col-12-medium">
 									<div class="project-card">
-										<a href="#" class="image fit">
+										<a href="#netbox-details" class="image fit details-link">
 											<img src="images/netbox-automation.jpg" alt="NetBox Automation Project">
 										</a>
 										<h3 class="project-title">NetBox Automation & Infrastructure Management</h3>
@@ -218,7 +207,7 @@
 								<!-- Project 1: Vision Assist -->
 								<div class="col-4 col-12-medium">
 									<div class="project-card">
-										<a href="#" class="image fit"><img src="images/vision-assist.jpg" alt="Vision Assist Project"></a>
+										<a href="#vision-assist-details" class="image fit details-link"><img src="images/vision-assist.jpg" alt="Vision Assist Project"></a>
 										<h3 class="project-title">Vision Assist</h3>
 										<p class="project-desc">
 											An assistive technology solution that uses computer vision to help visually impaired individuals navigate their environment and identify objects in real-time.
@@ -243,7 +232,7 @@
 								<!-- Project 2: Django Food Ordering System -->
 								<div class="col-4 col-12-medium">
 									<div class="project-card">
-										<a href="#" class="image fit"><img src="images/django_food.png" alt="Food Ordering System"></a>
+										<a href="#food-ordering-details" class="image fit details-link"><img src="images/django_food.png" alt="Food Ordering System"></a>
 										<h3 class="project-title">Django Food Ordering System</h3>
 										<p class="project-desc">
 											A full-stack web application for online food ordering with user authentication, menu management, order tracking, and payment processing.
@@ -256,7 +245,7 @@
 										</div>
 										<div class="project-links">
 											<a href="#food-ordering-details" class="details-link">View Details</a>
-											<a href="https://github.com/yourusername/food-ordering" target="_blank">GitHub</a>
+											<a href="https://github.com/mgnegrete/food-ordering" target="_blank">GitHub</a>
 										</div>
 									</div>
 								</div>
@@ -264,7 +253,7 @@
 								<!-- Project 3: NBA Position Performance Study -->
 								<div class="col-4 col-12-medium">
 									<div class="project-card">
-										<a href="#" class="image fit"><img src="images/nba-analysis.jpg" alt="NBA Performance Analysis"></a>
+										<a href="#nba-analysis-details" class="image fit details-link"><img src="images/nba-analysis.jpg" alt="NBA Performance Analysis"></a>
 										<h3 class="project-title">NBA Position Performance Study</h3>
 										<p class="project-desc">
 											Data analysis project examining the evolution of NBA positions and their statistical performance over time, with interactive visualizations.
@@ -277,7 +266,7 @@
 										</div>
 										<div class="project-links">
 											<a href="#nba-analysis-details" class="details-link">View Details</a>
-											<a href="https://github.com/yourusername/nba-position-analysis" target="_blank">GitHub</a>
+											<a href="https://github.com/mgnegrete/nba-position-analysis" target="_blank">GitHub</a>
 										</div>
 									</div>
 								</div>
@@ -491,7 +480,7 @@
 
 				<!-- Footer -->
 				<footer id="footer" style="text-align: center; padding: 2rem 0;">
-					<p>&copy; 2025 Manny Negrete. All rights reserved.</p>
+					<p>&copy; 2026 Manny Negrete. All rights reserved.</p>
 					<ul style="
 					  list-style: none;
 					  display: flex;
