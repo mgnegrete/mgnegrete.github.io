@@ -2164,6 +2164,14 @@ input, select, textarea {
 					border-radius: 12px;
 				}
 
+				@media screen and (max-width: 736px) {
+					#main img.profile_image2 {
+						float: none;
+						width: 100%;
+						margin: 0 0 1.5em 0;
+					}
+				}
+
 
 /* Footer */
 
@@ -2268,6 +2276,18 @@ input, select, textarea {
 		}
 		}
 	/* Get in Touch – CTA Cards (Background-Matched) */
+.contact-cards {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+@media screen and (max-width: 736px) {
+  .contact-cards {
+    flex-direction: column;
+  }
+}
+
 .contact-card {
   display: block;
   padding: 1.75rem;
